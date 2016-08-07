@@ -14,3 +14,8 @@
 + Declare element as a class
 + Lifecycle callbacks
 + Type extension element
+
+```HTML
+<!-- When we import html like that, we also add all the resources in it -->
+<link  href="" rel="import">
+```
