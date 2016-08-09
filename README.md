@@ -6,6 +6,10 @@
 
 > Polymer sprinkles a bit of sugar over the standard Web Components APIs, making it easier for you to get great results.
 
+## HTML ELEMENT
+
+> HTML element is an individual component of an HTML document or web page, once this has been parsed into the Document Object Model.
+
 ## Introduction
 
 + HTML element
