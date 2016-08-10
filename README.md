@@ -10,6 +10,10 @@
 
 > HTML element is an individual component of an HTML document or web page, once this has been parsed into the Document Object Model.
 
+- Open / close tag
+- Content
+- Attribute
+
 ## Introduction
 
 + HTML element
