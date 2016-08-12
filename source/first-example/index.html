@@ -1,25 +1,33 @@
 <html>
-    <head>
-        <!-- A shim is a library that brings a new API to an older environment, using only the means of that environment. -->
-        <!-- webcomponents-lite.min.js makes it possible for other browers to use th link import for html -->
-        <script src="/vendor/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-        <!-- we can also use polygit.org for CDN -->
-        <link rel="import" href="/vendor/bower_components/polymer/polymer.html">
-    </head>
-    <body>
 
-        <hello-element></hello-element>
+<head>
+    <!-- A shim is a library that brings a new API to an older environment, using only the means of that environment. -->
+    <!-- webcomponents-lite.min.js makes it possible for other browers to use th link import for html -->
+    <script src="/vendor/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <!-- we can also use polygit.org for CDN -->
+    <link rel="import" href="/vendor/bower_components/polymer/polymer.html">
+    <link rel="import" href="elements/goodbye-element.html">
+</head>
+<!-- the unresolved attribute only shows the content when everything has been loaded -->
 
-        <dom-module id="hello-element">
-            <template>Hello there</template>
-        </dom-module>
+<body unresolved>
 
-        <script>
-            HTMLImports.whenReady(function () {
-                Polymer({
-                    is: "hello-element"
-                })
-            });
-        </script>
-    </body>
+    <hello-element></hello-element>
+
+    <br>
+
+    <goodbye-element></goodbye-element>
+
+    <dom-module id="hello-element">
+        <template>Hello there</template>
+    </dom-module>
+
+    <script>
+    Polymer({
+        is: "hello-element"
+    })
+    </script>
+
+</body>
+
 </html>
