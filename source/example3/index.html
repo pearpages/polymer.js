@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <!-- A shim is a library that brings a new API to an older environment, using only the means of that environment. -->
+    <!-- webcomponents-lite.min.js makes it possible for other browers to use th link import for html -->
+    <script src="/vendor/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <!-- we can also use polygit.org for CDN -->
+    <link rel="import" href="/vendor/bower_components/polymer/polymer.html">
+</head>
+<body >
+
+    <script>
+        HTMLImports.whenReady(function(){
+            HelloElement = Polymer.Class({
+                is: 'hello-element',
+                created: function(){
+                    this.textContent = 'Hello there';
+                }
+            });
+
+            document.registerElement("hello-element", HelloElement);
+
+            var el = new HelloElement();
+            document.querySelector("body").appendChild(el);
+        });
+    </script>
+
+</body>
+
+</html>
