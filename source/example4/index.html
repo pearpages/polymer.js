@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <!-- A shim is a library that brings a new API to an older environment, using only the means of that environment. -->
+    <!-- webcomponents-lite.min.js makes it possible for other browers to use th link import for html -->
+    <script src="/vendor/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <!-- we can also use polygit.org for CDN -->
+    <link rel="import" href="/vendor/bower_components/polymer/polymer.html">
+</head>
+<body>
+    <button onclick="document.querySelector('hello-element').remove()">Remove Element</button>
+    <script>
+        HTMLImports.whenReady(function(){
+            
+            HelloElement = Polymer.Class({
+                is: 'hello-element',
+                created: function(){
+                    this.textContent = 'Hello there';
+                    console.log("Created: The element has been created.");
+                },
+                ready: function() {
+                    console.log("Ready: Property values set and local DOM is initialized.");
+                    this.message = "hello2";
+                },
+                attached: function(){
+                    console.log("Attached: The element is attached to the document." + "Can be called multiple times.");
+                },
+                detached: function(){
+                    console.log("Detached: The element has been detached");
+                },
+                factoryImpl: function(){
+                    console.log("Factory Impl: Only invoked when creating an event using" + " the constructor.");
+                },
+                attributeChanged: function(attrName, oldVal, newVal) {
+                    console.log("AttributeChanged: Attribute " + attrName + " oldValue: " + oldVal + " newValue: " + newVal);
+                }
+            });
+
+            document.registerElement("hello-element", HelloElement);
+
+            var el = new HelloElement();
+            document.querySelector('body').appendChild(el);
+            document.querySelector('body').appendChild(new HelloElement());
+            document.querySelector('body').appendChild(new HelloElement());
+            document.querySelector('body').appendChild(new HelloElement());
+            document.querySelector('body').appendChild(new HelloElement());    
+        });
+    </script>
+
+</body>
+
+</html>
