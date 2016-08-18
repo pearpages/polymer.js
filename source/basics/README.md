@@ -1,0 +1,6 @@
+- HTML Element
+- Create custom Element
+- Import our element
+- Declare element as a class
+- Lifecycle callbacks
+- Type extension element
