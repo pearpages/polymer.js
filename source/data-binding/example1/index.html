@@ -10,9 +10,7 @@
 <body>
     <alert-element></alert-element>
     <dom-module id="alert-element">
-        <template>
-
-        </template>
+        <template>[[alertUpdateTime]]</template>
     </dom-module>
 
     <script>
@@ -20,7 +18,13 @@
             Polymer({
                 is: "alert-element",
                 properties: {
-                    
+                    message: String,
+                    alertUpdateTime: {
+                        type: Date,
+                        value: function() {
+                            return new Date();
+                        }
+                    }
                 }
             });
         });
